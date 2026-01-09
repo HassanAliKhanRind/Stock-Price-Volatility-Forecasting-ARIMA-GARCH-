@@ -57,6 +57,7 @@ Period Used: 2010 – 2024
 Frequency: Daily (Trading Days)
 
 📐 Modeling Approach
+
 1️⃣ Data Preparation
 
 Convert prices to log prices

@@ -1,101 +1,27 @@
-# Stock-Price-Volatility-Forecasting-ARIMA-GARCH-
+Stock Price Volatility Forecasting (ARIMA-GARCH)
 
-📌 Project Overview
+Advanced time-series forecasting to predict mean returns (ARIMA) and volatility/risk (GARCH).
 
-This project applies time-series forecasting and volatility modeling to Apple Inc. (AAPL) stock data using a hybrid ARIMA–GARCH framework.
+Overview
 
-ARIMA is used to forecast future stock prices
+This project combines two complementary time-series models:
 
-GARCH is used to model and forecast time-varying volatility
+ARIMA (AutoRegressive Integrated Moving Average) — models and forecasts the mean/expected return of a stock's price series
+GARCH (Generalized Autoregressive Conditional Heteroskedasticity) — models and forecasts the volatility of returns, capturing volatility clustering (periods of high volatility followed by more high volatility)
 
-Forecasts are evaluated using actual market data
+Together, ARIMA-GARCH gives both a return forecast and a risk (volatility) forecast, which plain ARIMA alone cannot capture.
 
-Confidence intervals and error metrics are included
-
-This project demonstrates quantitative finance, econometrics, and risk modeling skills.
-
-🎯 Objectives
-
-Forecast short-term stock prices using ARIMA
-
-Model volatility clustering using GARCH
-
-Generate confidence intervals around forecasts
-
-Compare forecasts with actual realized prices
-
-Evaluate volatility forecasts using Mean Squared Error (MSE)
-
-🛠 Tech Stack
-
+Tools Used
 Python
+statsmodels (ARIMA)
+arch (GARCH)
+Pandas, Matplotlib
+Jupyter Notebook
 
-NumPy
+How to Run
 
-Pandas
+Open the notebook in Jupyter and run all cells. Replace the stock ticker/price series with any asset you want to forecast.
 
-yFinance
+Why This Matters
 
-Matplotlib
-
-Statsmodels (ARIMA)
-
-ARCH package (GARCH)
-
-Scikit-learn (Evaluation)
-
-📊 Data Details
-
-Asset: Apple Inc. (AAPL)
-
-Data Source: Yahoo Finance
-
-Price Type: Adjusted Close
-
-Period Used: 2010 – 2024
-
-Frequency: Daily (Trading Days)
-
-📐 Modeling Approach
-
-1️⃣ Data Preparation
-
-Convert prices to log prices
-
-Compute log returns
-
-Remove missing values
-
-Log transformation ensures stationarity and stability
-
-2️⃣ ARIMA Model (Price Forecasting)
-
-ARIMA models the conditional mean of log prices
-
-Manual ARIMA(1,1,1) and auto-ARIMA selection used
-
-Forecasts future log prices, converted back to real prices
-
-ARIMA(p,d,q)
-
-3️⃣ GARCH Model (Volatility Forecasting)
-
-GARCH(1,1) models conditional variance
-
-Captures volatility clustering common in financial returns
-
-Forecasts 10-day ahead volatility
-
-𝜎^2=ω+αϵt−12​+βσt−12​
-
-4️⃣ ARIMA + GARCH Combined
-
-ARIMA forecasts expected prices
-
-GARCH forecasts volatility
-
-Confidence intervals constructed using:
-
-
-PRICE = ey^​t​±σt​​
-
+Volatility forecasting is central to options pricing, risk management (VaR), and portfolio construction — GARCH models are the industry standard for capturing time-varying volatility in financial returns.

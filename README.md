@@ -1,4 +1,4 @@
-Stock Price Volatility Forecasting (ARIMA-GARCH)
+# Stock Price Volatility Forecasting (ARIMA-GARCH)
 
 Advanced time-series forecasting to predict mean returns (ARIMA) and volatility/risk (GARCH).
 
